@@ -618,4 +618,65 @@ SQL> alter session set nls_date_format='dd-MON-rr';
 
 ### 파이썬 오라클 연동
 
+- 주피터노트북 사용
+    - VS CODE > 명령 팔레트 실행(Ctrl + Shift + P)
+
+    - 오라클 CRUD 연동
+        - Create Read Update Delete의 약자
+        - INSERT SLECT UPDATE DELETE 명령어와 매핑
+        - 실무에서 CRUD를 분해해서 지시(CRU, R, CRUD...)
+
 ### DB설계
+
+- 데이터모델링
+    - 현실세계 데이터를 DB내에 옮기기 위해 데이터베이스를 설계
+    - 모델링 순서 - 요구사항 분석 > 개념적 모델링 > 논리적 모델링 > 물리적 모델링
+
+- 요구사항 분석
+    - 업무를 파악하고, 개발자와 업무담당자 간의 의사소통으로 필요한 데이터 정의
+    - DB 목적, 기능, 제약사항 정리 `요구사항 정의서` 산출
+
+- 개념 데이터 모델링
+    - 핵심 엔터티(테이블과 매핑)를 식별, 각 엔터티별 관계를 정의하는 논리구조 도식화
+    - 추상화 ERD(Entity Relationship Diagram)를 작성
+
+    ![alt text](image-12.png)
+
+- 논리 데이터 모델링
+    - 개념 데이터 모델링 바탕으로 속성, 키, 관계 명확히 정의
+    - 데이터 중복을 최소화 하기위한 **정규화** 수행
+    - 관계형 데이터 모델(테이블)로 구체화
+    - 논리(물리와 매칭) ERD 작성
+
+    ![alt text](image-13.png)
+
+- 물리 데이터 모델링
+    - 실제 사용하는 DBMS 특성(Oracle, MySQL, SQLServer...)를 고려해서 설계
+    - 테이블, 컬럼, 인덱스, 제약조건, `시퀀스` 등 생성하고, 성능을 위해서 **반정규화** 진행
+    - 최종 스키마 완성
+
+    ![alt text](image-14.png)
+
+- 위 모델링을 1회성이 아닌, 기능 추가/변경으로 `지속적인 업데이트` 수행
+
+### 데이터베이스 모델링 툴
+
+- 모델링 툴
+    - 논리/물리 모델링을 컴퓨터 상에서 할 수 있는 개발툴
+
+- 종류
+    - ERWin Data Modeler - 퀘스트 사에서 만든 ERD 작성 개발 툴. 유료. 업계 표준
+    - eXERD - 한국산 모델링 툴. 이클립스 기반. 유료
+    - ER/Studio - 대규모 엔터프라이즈 데이터 아키텍처 모델링 툴
+    - Draw.io - https://app.diagrams.net/ 무료, 다양한 다이어그램. SQL 변환 불가
+    - `erdcloud` - https://www.erdcloud.com/ 모델링에 물리 스키마까지 생성가능한 한국어 지원도구
+    - DBeaver - 물리적 테이블 생성 후 다이어그램 확인 가능. 모델링은 불가 뷰어
+    - MySQL Workbench - 물리적 다이어그램 생성 가능. 생성한 그대로 DB가 됨.
+
+#### ERDCLOUD
+
+- 회원가입 후 로그인
+
+1. ERD 생성 클릭
+
+    ![alt text](image-15.png)
