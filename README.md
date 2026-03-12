@@ -680,3 +680,5 @@ SQL> alter session set nls_date_format='dd-MON-rr';
 1. ERD 생성 클릭
 
     ![alt text](image-15.png)
+
+## day10 완료
